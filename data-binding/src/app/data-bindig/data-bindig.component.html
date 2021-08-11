@@ -1,0 +1,13 @@
+<section>
+    <article>
+        <h3>Interpolation</h3>
+        <p>String realizada com interpolação: {{ url }}</p>
+        <p>A soma de 1 + 1 = {{ 1+1 }}</p>
+        <p>A soma de 1 + 1 não é {{ 1 + 1 + getValor()}}</p>
+        <p>Eu vou curtir o curso? {{ cursoAngular && getCurtirCurso()}}</p>
+    </article>
+
+    <article>
+        <img [src]="imgUrl" alt="image" (click)="logImage()">
+    </article>
+</section>
