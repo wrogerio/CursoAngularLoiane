@@ -1,13 +1,185 @@
+<!-- <section>
+  <article>
+    <h3>Interpolation</h3>
+    <p>String realizada com interpolação: {{ url }}</p>
+    <p>A soma de 1 + 1 = {{ 1 + 1 }}</p>
+    <p>A soma de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
+    <p>Eu vou curtir o curso? {{ cursoAngular && getCurtirCurso() }}</p>
+  </article>
+</section>
+
+<section>
+  <article>
+    <img [src]="imgUrl" alt="image" (click)="logImage()" />
+  </article>
+</section>
+
+<section>
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Class e Style Binding</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="form-group">
+            <label for="">Selecione uma classe</label>
+            <select class="form-control" #classe (change)="(0)">
+              <option value="">Selecione</option>
+              <option>alert-success</option>
+              <option>alert-danger</option>
+              <option>alert-warning</option>
+              <option>alert-info</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div
+            class="alert"
+            [class.alert-success]="classe.value == 'alert-success'"
+          >
+            Sucesso
+          </div>
+          <div
+            class="alert"
+            [class.alert-danger]="classe.value == 'alert-danger'"
+          >
+            Erro
+          </div>
+          <div
+            class="alert"
+            [class.alert-warning]="classe.value == 'alert-warning'"
+          >
+            Alerta
+          </div>
+          <div class="alert" [class.alert-info]="classe.value == 'alert-info'">
+            Info
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section>
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Class e Style Binding</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="form-group">
+            <label for="">Selecione uma classe</label>
+            <select class="form-control" #classe2 (change)="(0)">
+              <option value="">Selecione</option>
+              <option>alert-success</option>
+              <option>alert alert-danger</option>
+              <option>alert alert-warning</option>
+              <option>alert alert-info</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="alert" [class]="classe2.value">{{ classe2.value }}</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section>
+  <article>
+    <div class="container">
+      <h3>Event Binding</h3>
+
+      <div>
+        <button class="btn btn-primary" (click)="logClick()">Salvar</button>
+      </div>
+      <div>
+        <input
+          type="text"
+          (keyup)="onKeyUp(ci.value)"
+          (keyup.enter)="salvar(ci.value)"
+          (blur)="salverBlur(ci.value)"
+          #ci
+        />
+        <br />
+        <input type="text" value="{{ valorString }}" />
+        <br />
+        <input type="text" value="{{ valorSalvo }}" />
+        <br />
+        <input type="text" value="{{ valorBlur }}" />
+        <br />
+        <span
+          [class]="aplicarClasse"
+          [class.hi]="isMouseOver"
+          (mouseover)="aplicar()"
+          (mouseout)="voltar()"
+          #m1
+          >Passe o mouse sobre mim</span
+        >
+      </div>
+    </div>
+  </article>
+</section> 
+
+<section>
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Two-Way DataBinding</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" [(ngModel)]="nome" >
+          <p>você digitou o nome: {{ nome }}</p>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-3">
+              <input type="text" [(ngModel)]="pessoa.nome" class="form-control">
+          </div>
+          <div class="col-3">
+              <input type="number" [(ngModel)]="pessoa.idade" class="form-control">
+          </div>
+          <div class="col-6">
+              <p class="alert alert-success">Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos</p>
+          </div>
+      </div>
+    </div>
+  </article>
+</section> -->
+
 <section>
     <article>
-        <h3>Interpolation</h3>
-        <p>String realizada com interpolação: {{ url }}</p>
-        <p>A soma de 1 + 1 = {{ 1+1 }}</p>
-        <p>A soma de 1 + 1 não é {{ 1 + 1 + getValor()}}</p>
-        <p>Eu vou curtir o curso? {{ cursoAngular && getCurtirCurso()}}</p>
-    </article>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    Input/Output Properties
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <app-curso [nome]="nomesDoCurso"></app-curso>
+                </div>
+            </div>
 
-    <article>
-        <img [src]="imgUrl" alt="image" (click)="logImage()">
+            <div class="row justify-content-center">
+              <div class="col-3">
+                <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></contador>
+              </div>
+            </div>
+        </div>
     </article>
-</section>
+</section> 
