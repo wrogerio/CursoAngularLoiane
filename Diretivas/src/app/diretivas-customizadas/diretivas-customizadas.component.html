@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p fundoAmarelo>
+                Texto com fundo amarelo
+            </p>
+            
+            <h3 fundoAmarelo>Agora sim</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p highlightMouse>
+              Texto com HighLight quando passo o mouse  
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p highlight defaultColor='blue' highLightColor='cyan'>
+              Texto com HighLight com cores customizadas
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <span class="btn btn-primary" (click)="mostrar()">Mostrar Marido</span>
+            <div *ngIf="mostrarNomes">
+                <h3>Wellington</h3>
+            </div>
+            <div *ngElse="mostrarNomes">
+                <h3>Vivian</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
