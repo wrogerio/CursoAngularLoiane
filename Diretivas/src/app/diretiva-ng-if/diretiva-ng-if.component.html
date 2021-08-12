@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Diretiva NgIf</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col"> 
+        <div class='alert alert-info' *ngIf="cursos.length > 0">
+            <h4>Lista de Cursos NgIf</h4>
+            <ul class='list-group'>
+                <li class='list-group-item d-flex justify-content-between align-items-center' *ngFor="let item of cursos">
+                    {{ item }}
+                    <span class="btn btn-danger" (click)="remover(item)">Excluir</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col"> 
+        <div class='alert alert-info' [hidden]="cursos.length == 0">
+            <h4>Lista de Cursos NgFor</h4>
+            <ul class='list-group'>
+                <li class='list-group-item d-flex justify-content-between align-items-center' *ngFor="let item of cursos">
+                    {{ item }}
+                    <span class="btn btn-danger" (click)="remover(item)">Excluir</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-4">
+        <div class="form-group">
+            <label for="">Novo Curso</label>
+            <input [(ngModel)]="novoCurso" class="form-control" (keyup.enter)="adicionarCurso()" >
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="form-group">
+            <label for="">&nbsp;</label>
+            <span class="btn btn-primary form-control" (click)="adicionarCurso()">Adicionar</span>
+        </div>
+      </div>
+  </div>
+</div>
