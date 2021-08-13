@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Exemplos Pipes</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <ul class='list-group'>
+                <li class='list-group-item'>Titulo: {{ livro.titulo | camelCase }}</li>
+                <li class='list-group-item'>Avaliação: {{ livro.rating | number:'1.2-2' }}</li>
+                <li class='list-group-item'>Páginas: {{ livro.numeroPaginas }}</li>
+                <li class='list-group-item'>Preço: {{ livro.preco | currency:'BRL' }}</li>
+                <li class='list-group-item'>Dt Lançamento: {{ livro.dataLancamento | date }}</li>
+                <li class='list-group-item'>Livro: {{ livro | json }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
